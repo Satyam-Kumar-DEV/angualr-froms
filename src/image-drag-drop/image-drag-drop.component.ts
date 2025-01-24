@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserService } from '../service/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-image-drag-drop',
@@ -27,7 +27,8 @@ export class ImageDragDropComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private service: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
@@ -139,6 +140,7 @@ export class ImageDragDropComponent implements OnInit {
         this.service.createUser(formData).subscribe(
           (response) => {
             if (response) {
+              this.router.navigate(['/']);
               alert(`User created successfully`);
             }
           },
@@ -157,6 +159,7 @@ export class ImageDragDropComponent implements OnInit {
         this.service.updateUser(formData, this.userId).subscribe(
           (response) => {
             if (response) {
+              this.router.navigate(['/']);
               alert(`User Updated successfully`);
             }
           },
