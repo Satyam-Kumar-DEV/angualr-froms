@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-section {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+  font-size: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #555;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d80);
+}
+
+.add-btn {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #28a745, #1c7f31);
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #1c7f31, #145f22);
+}
+
+.remove-btn {
+  background: linear-gradient(90deg, #dc3545, #a72834);
+  margin-top: 10px;
+}
+
+.remove-btn:hover {
+  background: linear-gradient(90deg, #a72834, #741f26);
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  background: linear-gradient(90deg, #17a2b8, #0f7b8e);
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #0f7b8e, #0a5864);
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.file-item button {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #fff;
+  background: #dc3545;
+  border: none;
+  border-radius: 6px;
+}
+
+.file-item button:hover {
+  background: #a72834;
+}
+
+.error {
+  color: #a72834;
+  padding: 10px;
+  small {
+    font-size: 1rem;
+  }
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+.remove-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

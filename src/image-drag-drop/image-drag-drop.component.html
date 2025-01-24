@@ -1,0 +1,80 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" />
+    <div
+      class="error"
+      *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid"
+    >
+      <small *ngIf="form.get('firstName')?.hasError('required')"
+        >First Name is required.</small
+      >
+    </div>
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" />
+    <div
+      class="error"
+      *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"
+    >
+      <small *ngIf="form.get('lastName')?.hasError('required')"
+        >Last Name is required.</small
+      >
+    </div>
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input id="mobileNumber" formControlName="mobileNumber" />
+    <div
+      class="error"
+      *ngIf="
+        form.get('mobileNumber')?.touched && form.get('mobileNumber')?.invalid
+      "
+    >
+      <small *ngIf="form.get('mobileNumber')?.hasError('required')"
+        >Mobile Number is required.</small
+      >
+      <small *ngIf="form.get('mobileNumber')?.hasError('pattern')"
+        >Invalid Mobile Number.</small
+      >
+    </div>
+
+    <div formArrayName="addresses">
+      <div
+        *ngFor="let address of addresses.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <label>City:</label>
+        <input formControlName="city" />
+
+        <label>State:</label>
+        <input formControlName="state" />
+
+        <label>Country:</label>
+        <input formControlName="country" />
+
+        <button class="remove-button" type="button" (click)="removeAddress(i)">
+          Remove
+        </button>
+      </div>
+      <button type="button" (click)="addAddress()">Add Address</button>
+    </div>
+
+    <div
+      class="drop-zone"
+      (drop)="onDrop($event)"
+      (dragover)="onDragOver($event)"
+    >
+      <p>Drag and drop files here or</p>
+      <input type="file" (change)="onFileSelect($event)" multiple />
+    </div>
+
+    <ul>
+      <li *ngFor="let file of files; let i = index">
+        {{ file?.name ? file?.name : file }}
+        <button type="button" (click)="removeFile(i)">Remove</button>
+      </li>
+    </ul>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
